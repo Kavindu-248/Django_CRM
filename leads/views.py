@@ -2,6 +2,16 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Lead, Agent
 from .forms import LeadForm, LeadModelForm
+from django.views.generic import TemplateView
+
+
+
+class LandingPageView(TemplateView):
+    template_name = "landing.html"
+
+
+def landing_page(request):
+    return render(request, "landing.html")
 
 
 def lead_list(request):
