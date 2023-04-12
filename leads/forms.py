@@ -1,6 +1,7 @@
 from django import forms
 from .models import Lead
 
+
 class LeadModelForm(forms.ModelForm):
     class Meta:
         model = Lead
@@ -8,8 +9,9 @@ class LeadModelForm(forms.ModelForm):
             'first_name',
             'last_name',
             'age',
-            'agent'
+            'agent',
         )
+
 
 class LeadForm(forms.Form):
     first_name = forms.CharField()
