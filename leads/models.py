@@ -1,20 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
-
-
 
 class User(AbstractUser):
     pass
-    
 
-class Agent(models.Model):
+
+class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.email
-
+        return self.user.username
 
 
 class Lead(models.Model):
@@ -27,9 +23,16 @@ class Lead(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 
+class Agent(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.email
 
 
-   
+
+
 
 
 
