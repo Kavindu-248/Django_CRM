@@ -7,8 +7,6 @@ from .models import Lead, Agent
 from .forms import LeadForm, LeadModelForm, CustomUserCreationForm
 
 
-
-
 class SignupView(generic.CreateView):
     template_name = "registration/signup.html"
     form_class = CustomUserCreationForm
