@@ -8,5 +8,8 @@ class AgentModelForm(forms.ModelForm):
     class Meta:
         model = User
         fields = (
-            'user'
+            'email',
+            'username',
+            'first_name',
+            'last_name',
         )
