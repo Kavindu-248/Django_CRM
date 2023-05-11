@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import path,include
 from leads.views import landing_page, LandingPageView, SignupView
-from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
 from django.conf import settings
 
