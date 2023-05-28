@@ -8,6 +8,7 @@ from .models import Lead, Agent
 from .forms import LeadForm, LeadModelForm, CustomUserCreationForm
 
 
+
 # CRUD+L - Create, Retrieve, Update and Delete + List
 
 
@@ -41,7 +42,6 @@ class LeadListView(LoginRequiredMixin, generic.ListView):
             # filter for the agent that is logged in
             queryset = queryset.filter(agent__user=user)
         return queryset
-
 
 def lead_list(request):
     leads = Lead.objects.all()
