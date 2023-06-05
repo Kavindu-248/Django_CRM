@@ -151,6 +151,21 @@ def lead_delete(request, pk):
     return redirect("/leads")
 
 
+class CatergoryListView(LoginRequiredMixin, generic.ListView):
+    template_name = "leads/category_list.html"
+
+    def get_queryset(self):
+        user = self.request.user
+        # initial queryset of leads for the entire organisation
+        if user.is_organisor:
+            queryset = Lead.objects.filter(organisation=user.userprofile)
+        else:
+            queryset = Lead.objects.filter(organisation=user.agent.organisation, agent__isnull=False)
+            # filter for the agent that is logged in
+            queryset = queryset.filter(agent__user=user)
+        return queryset
+
+
 
 
 
