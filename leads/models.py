@@ -43,7 +43,7 @@ def post_user_created_signal(sender, instance, created, **kwargs):
 post_save.connect(post_user_created_signal, sender=User)
 
 
-class Catergory(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=30) #New,Attempted,Contacted,Converted
     organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
