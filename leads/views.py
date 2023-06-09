@@ -7,11 +7,6 @@ from agents.mixins import OrganisorAndLoginRequiredMixin
 from .models import Lead, Agent, Category
 from .forms import LeadForm, LeadModelForm, CustomUserCreationForm, AssignAgentForm
 
-
-
-# CRUD+L - Create, Retrieve, Update and Delete + List
-
-
 class SignupView(generic.CreateView):
     template_name = "registration/signup.html"
     form_class = CustomUserCreationForm
